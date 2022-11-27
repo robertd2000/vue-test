@@ -1,34 +1,22 @@
 <script setup>
-import Navigation from './components/Navigation.vue'
-import photo_1 from './assets/images/14896420-2 1 (1).png'
+import Navigation from "./components/Navigation.vue";
+import ProductCard from "./components/Product/ProductCard.vue";
+import ProductList from "./components/ProductList/ProductList.vue";
+import Footer from "./components/Footer/Footer.vue";
 </script>
 
 <template>
   <Navigation />
 
   <main>
-    <section class="main">
-      <div class="container">
-        <div class="slider">
-          <div class="main-image">
-            <img :src="photo_1" alt="" />
-          </div>
-        </div>
-
-        <div class="order">
-          <h3 class="title">Пижама для девочек</h3>
-
-          <span class="article"> Арт. 02765/46 </span>
-        </div>
-      </div>
-    </section>
+    <ProductCard />
+    <ProductList />
   </main>
+
+  <Footer />
 </template>
 
 <style>
-.main {
-  margin-top: 24px;
-}
 
 .container {
   max-width: 1390px;
@@ -36,19 +24,25 @@ import photo_1 from './assets/images/14896420-2 1 (1).png'
   display: flex;
 }
 
-.order {
-  margin-left: 30px;
+@media (max-width: 1135px) {
+  .main {
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 900px;
+  }
 }
 
-.order.title {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-}
+@media (max-width: 800px) {
+  .main {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: hidden;
+  }
 
-.article {
-  font-size: 12px;
-  line-height: 16px;
-  color: #828282;
+  .container {
+    display: block;
+  }
 }
 </style>
